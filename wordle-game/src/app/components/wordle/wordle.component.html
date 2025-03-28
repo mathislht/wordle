@@ -1,0 +1,35 @@
+<div *ngIf="!gameOver" class="game-container">
+  <h1 class="title">Wordle</h1>
+
+  <div class="guess-area">
+    <input
+      [value]="guess"
+      (input)="onInputChange($event)"
+      [disabled]="gameOver"
+      maxLength="5"
+      placeholder="Enter your guess"
+    />
+    <button (click)="makeGuess()" [disabled]="gameOver">Guess</button>
+  </div>
+
+  <div *ngIf="attempts.length > 0" class="feedback-area">
+    <div *ngFor="let attempt of attempts; let i = index" class="feedback-row">
+      <span *ngFor="let letter of attempt.split(''); let j = index"
+            [class.green]="feedback[i][j] === 'green'"
+            [class.yellow]="feedback[i][j] === 'yellow'"
+            [class.grey]="feedback[i][j] === 'grey'">
+        {{ letter }}
+      </span>
+    </div>
+  </div>
+
+
+  <div class="remaining-attempts">
+    <p>Remaining Attempts: {{ remainingAttempts }}</p>
+  </div>
+</div>
+
+<div *ngIf="gameOver" class="game-over">
+  <h2>Game Over</h2>
+  <button (click)="startNewGame()">Start New Game</button>
+</div>
