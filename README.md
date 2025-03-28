@@ -42,21 +42,21 @@ Follow these steps to get the project up and running on your local machine.
 
 2. Navigate to the project directory:
 
- ```bash
+    ```bash
    cd wordle-game
-```
+   ```
 
 3. Install the dependencies:
 
- ```bash
+    ```bash
    npm install
-```
+   ```
 
 4. Start the Angular development server:
 
- ```bash
+    ```bash
    ng serve
-```
+   ```
 
 5. Open your browser and visit http://localhost:4200 to play the game.
 
@@ -65,6 +65,6 @@ Follow these steps to get the project up and running on your local machine.
 
 To run the unit tests and check the code coverage, execute the following command:
 
- ```bash
+   ```bash
    ng test --code-coverage
-```
+   ```
