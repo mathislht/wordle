@@ -49,6 +49,15 @@ describe('WordleComponent', () => {
     expect(component.gameOver).toBeTrue();
   });
 
+  it('should handle remaining attempts and stop when out of attempts', () => {
+    component.remainingAttempts = 1;
+    spyOn(service, 'checkGuess').and.returnValue({ feedback: 'yellow grey grey grey grey', correct: false });
+    component.guess = 'apple';
+    component.makeGuess();
+    expect(component.remainingAttempts).toBe(0);
+    expect(component.gameOver).toBeTrue();
+  });
+
   it('should not allow empty guesses', () => {
     component.guess = '';
     component.makeGuess();
