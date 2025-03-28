@@ -39,3 +39,32 @@ Follow these steps to get the project up and running on your local machine.
 
    ```bash
    git clone https://github.com/mathis_lht/wordle-game.git
+
+2. Navigate to the project directory:
+
+ ```bash
+   cd wordle-game
+```
+
+3. Install the dependencies:
+
+ ```bash
+   npm install
+```
+
+4. Start the Angular development server:
+
+ ```bash
+   ng serve
+```
+
+5. Open your browser and visit http://localhost:4200 to play the game.
+
+
+### Run tests
+
+To run the unit tests and check the code coverage, execute the following command:
+
+ ```bash
+   ng test --code-coverage
+```
